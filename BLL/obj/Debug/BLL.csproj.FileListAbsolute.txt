@@ -31,3 +31,14 @@ C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\BLL\obj\Debug\BLL.csproj.Core
 C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\BLL\obj\Debug\BLL.dll
 C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\BLL\obj\Debug\BLL.pdb
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\bin\Debug\BLL.dll
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\bin\Debug\BLL.pdb
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\bin\Debug\DAL.dll
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\bin\Debug\DTO.dll
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\bin\Debug\DAL.pdb
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\bin\Debug\DTO.pdb
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\obj\Debug\BLL.dll
+D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\BLL\obj\Debug\BLL.pdb

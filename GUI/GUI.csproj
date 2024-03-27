@@ -71,6 +71,26 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -123,6 +143,18 @@
     </Compile>
     <Compile Include="All Tho Control\UC_DoiMK.Designer.cs">
       <DependentUpon>UC_DoiMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="All Tho Control\UC_Lich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All Tho Control\UC_Lich.designer.cs">
+      <DependentUpon>UC_Lich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="All Tho Control\UC_LichHen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All Tho Control\UC_LichHen.designer.cs">
+      <DependentUpon>UC_LichHen.cs</DependentUpon>
     </Compile>
     <Compile Include="All Tho Control\UC_NapTien.cs">
       <SubType>UserControl</SubType>
@@ -350,6 +382,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="All Tho Control\UC_DoiMK.resx">
       <DependentUpon>UC_DoiMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All Tho Control\UC_Lich.resx">
+      <DependentUpon>UC_Lich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All Tho Control\UC_LichHen.resx">
+      <DependentUpon>UC_LichHen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All Tho Control\UC_NapTien.resx">
       <DependentUpon>UC_NapTien.cs</DependentUpon>

@@ -19,54 +19,45 @@ namespace GUI
             InitializeComponent();
         }
 
-/*        private void guna2Button1_Click(object sender, EventArgs e)
+        private void HideAllUC()
         {
-            uC_TrangChu1.Visible = true;
-            uC_TrangChu1.BringToFront();
-        }
-*/
-        private void FrmTHO_Load(object sender, EventArgs e)
-        {
-           // uC_TrangChu1.Visible = false;
             uC_TaiKhoan1.Visible = false;
             uC_DangBai1.Visible = false;
-            uC_ThongBao1.Visible = false;
+            uC_LichHen1.Visible = false;
             uC_ThongKe1.Visible = false;
-            guna2Button3.PerformClick();
         }
 
-        private void gunaControlBox1_Click(object sender, EventArgs e)
+        private void FrmTHO_Load(object sender, EventArgs e)
         {
-         
+            // uC_TrangChu1.Visible = false;
+            HideAllUC();
+            btnDangBai.PerformClick();
         }
 
-        private void guna2Button6_Click(object sender, EventArgs e)
+        private void btnLichHen_Click(object sender, EventArgs e)
         {
-            uC_TaiKhoan1.Visible = true;
-            uC_TaiKhoan1.BringToFront();
+            HideAllUC();
+            uC_LichHen1.Visible = true;
+
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void btnDangBai_Click(object sender, EventArgs e)
         {
+            HideAllUC();
             uC_DangBai1.Visible = true;
-            uC_DangBai1.BringToFront();
+
         }
 
-        private void guna2Button5_Click(object sender, EventArgs e)
+        private void btnThongKe_Click(object sender, EventArgs e)
         {
-            uC_ThongBao1.Visible=true;
-            uC_ThongBao1.BringToFront();
+            HideAllUC();
+            uC_ThongKe1.Visible = true;
         }
 
-        private void guna2Button8_Click(object sender, EventArgs e)
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            uC_ThongKe1.Visible = true ;
-            uC_ThongKe1.BringToFront();
-        }
-
-        private void gunaPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            HideAllUC();
+            uC_TaiKhoan1.Visible = true;
         }
     }
 }

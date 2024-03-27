@@ -35,17 +35,17 @@
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLichHen = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDangBai = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_ThongKe1 = new GUI.All_Tho_Control.UC_ThongKe();
-            this.uC_ThongBao1 = new GUI.All_Tho_Control.UC_ThongBao();
-            this.uC_DangBai1 = new GUI.All_Tho_Control.UC_DangBai();
             this.uC_TaiKhoan1 = new GUI.All_Tho_Control.UC_TaiKhoan();
+            this.uC_DangBai1 = new GUI.All_Tho_Control.UC_DangBai();
+            this.uC_LichHen1 = new GUI.All_Tho_Control.UC_LichHen();
+            this.uC_ThongKe1 = new GUI.All_Tho_Control.UC_ThongKe();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -65,7 +65,6 @@
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(1385, 34);
             this.gunaPanel2.TabIndex = 3;
-            this.gunaPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel2_Paint);
             // 
             // gunaControlBox3
             // 
@@ -116,45 +115,68 @@
             this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox1.Size = new System.Drawing.Size(45, 29);
             this.gunaControlBox1.TabIndex = 0;
-            this.gunaControlBox1.Click += new System.EventHandler(this.gunaControlBox1_Click);
             // 
             // gunaPanel1
             // 
-            this.gunaPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.gunaPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel1.Controls.Add(this.guna2Button8);
+            this.gunaPanel1.Controls.Add(this.btnLichHen);
+            this.gunaPanel1.Controls.Add(this.btnThongKe);
             this.gunaPanel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.gunaPanel1.Controls.Add(this.guna2Button6);
-            this.gunaPanel1.Controls.Add(this.guna2Button5);
-            this.gunaPanel1.Controls.Add(this.guna2Button3);
+            this.gunaPanel1.Controls.Add(this.btnTaiKhoan);
+            this.gunaPanel1.Controls.Add(this.btnDangBai);
             this.gunaPanel1.Location = new System.Drawing.Point(0, 33);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(218, 638);
             this.gunaPanel1.TabIndex = 4;
             // 
-            // guna2Button8
+            // btnLichHen
             // 
-            this.guna2Button8.Animated = true;
-            this.guna2Button8.BorderRadius = 10;
-            this.guna2Button8.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button8.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
-            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button8.FillColor = System.Drawing.Color.White;
-            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button8.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button8.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button8.Image")));
-            this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button8.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.guna2Button8.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button8.Location = new System.Drawing.Point(11, 230);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(197, 45);
-            this.guna2Button8.TabIndex = 15;
-            this.guna2Button8.Text = "Thống Kê";
-            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
+            this.btnLichHen.Animated = true;
+            this.btnLichHen.BorderRadius = 10;
+            this.btnLichHen.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLichHen.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
+            this.btnLichHen.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnLichHen.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLichHen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLichHen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLichHen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLichHen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLichHen.FillColor = System.Drawing.Color.White;
+            this.btnLichHen.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLichHen.ForeColor = System.Drawing.Color.Black;
+            this.btnLichHen.Image = ((System.Drawing.Image)(resources.GetObject("btnLichHen.Image")));
+            this.btnLichHen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLichHen.Location = new System.Drawing.Point(11, 223);
+            this.btnLichHen.Name = "btnLichHen";
+            this.btnLichHen.Size = new System.Drawing.Size(197, 45);
+            this.btnLichHen.TabIndex = 17;
+            this.btnLichHen.Text = "Lịch Hẹn";
+            this.btnLichHen.Click += new System.EventHandler(this.btnLichHen_Click);
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Animated = true;
+            this.btnThongKe.BorderRadius = 10;
+            this.btnThongKe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnThongKe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
+            this.btnThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThongKe.FillColor = System.Drawing.Color.White;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
+            this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKe.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.btnThongKe.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThongKe.Location = new System.Drawing.Point(11, 291);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(197, 45);
+            this.btnThongKe.TabIndex = 15;
+            this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -169,77 +191,53 @@
             this.guna2CirclePictureBox1.TabIndex = 13;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // guna2Button6
+            // btnTaiKhoan
             // 
-            this.guna2Button6.Animated = true;
-            this.guna2Button6.BorderRadius = 10;
-            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
-            this.guna2Button6.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
-            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button6.Location = new System.Drawing.Point(11, 372);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(197, 45);
-            this.guna2Button6.TabIndex = 8;
-            this.guna2Button6.Text = "Tài Khoản";
-            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
+            this.btnTaiKhoan.Animated = true;
+            this.btnTaiKhoan.BorderRadius = 10;
+            this.btnTaiKhoan.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTaiKhoan.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
+            this.btnTaiKhoan.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTaiKhoan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTaiKhoan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTaiKhoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTaiKhoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTaiKhoan.FillColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.Black;
+            this.btnTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiKhoan.Image")));
+            this.btnTaiKhoan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(11, 363);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(197, 45);
+            this.btnTaiKhoan.TabIndex = 8;
+            this.btnTaiKhoan.Text = "Tài Khoản";
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
-            // guna2Button5
+            // btnDangBai
             // 
-            this.guna2Button5.Animated = true;
-            this.guna2Button5.BorderRadius = 10;
-            this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
-            this.guna2Button5.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.White;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
-            this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.Location = new System.Drawing.Point(11, 301);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(197, 45);
-            this.guna2Button5.TabIndex = 7;
-            this.guna2Button5.Text = "Thông Báo";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderRadius = 10;
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
-            this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.White;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(11, 157);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(197, 45);
-            this.guna2Button3.TabIndex = 5;
-            this.guna2Button3.Text = "Đăng Bài";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            this.btnDangBai.Animated = true;
+            this.btnDangBai.BorderRadius = 10;
+            this.btnDangBai.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDangBai.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(169)))));
+            this.btnDangBai.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnDangBai.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangBai.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangBai.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangBai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangBai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangBai.FillColor = System.Drawing.Color.White;
+            this.btnDangBai.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDangBai.ForeColor = System.Drawing.Color.Black;
+            this.btnDangBai.Image = ((System.Drawing.Image)(resources.GetObject("btnDangBai.Image")));
+            this.btnDangBai.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangBai.Location = new System.Drawing.Point(11, 157);
+            this.btnDangBai.Name = "btnDangBai";
+            this.btnDangBai.Size = new System.Drawing.Size(197, 45);
+            this.btnDangBai.TabIndex = 5;
+            this.btnDangBai.Text = "Đăng Bài";
+            this.btnDangBai.Click += new System.EventHandler(this.btnDangBai_Click);
             // 
             // guna2Elipse1
             // 
@@ -248,36 +246,13 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.uC_ThongKe1);
-            this.panel1.Controls.Add(this.uC_ThongBao1);
+            this.panel1.Controls.Add(this.uC_LichHen1);
             this.panel1.Controls.Add(this.uC_DangBai1);
             this.panel1.Controls.Add(this.uC_TaiKhoan1);
             this.panel1.Location = new System.Drawing.Point(250, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1109, 574);
             this.panel1.TabIndex = 6;
-            // 
-            // uC_ThongKe1
-            // 
-            this.uC_ThongKe1.BackColor = System.Drawing.Color.White;
-            this.uC_ThongKe1.Location = new System.Drawing.Point(6, 3);
-            this.uC_ThongKe1.Name = "uC_ThongKe1";
-            this.uC_ThongKe1.Size = new System.Drawing.Size(1103, 568);
-            this.uC_ThongKe1.TabIndex = 9;
-            // 
-            // uC_ThongBao1
-            // 
-            this.uC_ThongBao1.Location = new System.Drawing.Point(3, 3);
-            this.uC_ThongBao1.Name = "uC_ThongBao1";
-            this.uC_ThongBao1.Size = new System.Drawing.Size(1103, 568);
-            this.uC_ThongBao1.TabIndex = 8;
-            // 
-            // uC_DangBai1
-            // 
-            this.uC_DangBai1.BackColor = System.Drawing.Color.White;
-            this.uC_DangBai1.Location = new System.Drawing.Point(6, 6);
-            this.uC_DangBai1.Name = "uC_DangBai1";
-            this.uC_DangBai1.Size = new System.Drawing.Size(1103, 568);
-            this.uC_DangBai1.TabIndex = 7;
             // 
             // uC_TaiKhoan1
             // 
@@ -286,6 +261,28 @@
             this.uC_TaiKhoan1.Name = "uC_TaiKhoan1";
             this.uC_TaiKhoan1.Size = new System.Drawing.Size(1103, 568);
             this.uC_TaiKhoan1.TabIndex = 6;
+            // 
+            // uC_DangBai1
+            // 
+            this.uC_DangBai1.BackColor = System.Drawing.Color.White;
+            this.uC_DangBai1.Location = new System.Drawing.Point(6, 3);
+            this.uC_DangBai1.Name = "uC_DangBai1";
+            this.uC_DangBai1.Size = new System.Drawing.Size(1103, 568);
+            this.uC_DangBai1.TabIndex = 7;
+            // 
+            // uC_LichHen1
+            // 
+            this.uC_LichHen1.Location = new System.Drawing.Point(6, 3);
+            this.uC_LichHen1.Name = "uC_LichHen1";
+            this.uC_LichHen1.Size = new System.Drawing.Size(1103, 568);
+            this.uC_LichHen1.TabIndex = 8;
+            // 
+            // uC_ThongKe1
+            // 
+            this.uC_ThongKe1.Location = new System.Drawing.Point(6, 3);
+            this.uC_ThongKe1.Name = "uC_ThongKe1";
+            this.uC_ThongKe1.Size = new System.Drawing.Size(1103, 568);
+            this.uC_ThongKe1.TabIndex = 10;
             // 
             // FrmTHO
             // 
@@ -301,7 +298,6 @@
             this.Name = "FrmTHO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTHO";
-            this.Load += new System.EventHandler(this.FrmTHO_Load);
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -318,16 +314,16 @@
         private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
         private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnTaiKhoan;
+        private Guna.UI2.WinForms.Guna2Button btnDangBai;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button btnThongKe;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel1;
         private All_Tho_Control.UC_TaiKhoan uC_TaiKhoan1;
-        private All_Tho_Control.UC_DangBai uC_DangBai1;
-        private All_Tho_Control.UC_ThongBao uC_ThongBao1;
+        private Guna.UI2.WinForms.Guna2Button btnLichHen;
         private All_Tho_Control.UC_ThongKe uC_ThongKe1;
+        private All_Tho_Control.UC_LichHen uC_LichHen1;
+        private All_Tho_Control.UC_DangBai uC_DangBai1;
     }
 }
