@@ -86,5 +86,17 @@ namespace GUI
         {
 
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Form parent = FindForm();
+                parent?.Hide();
+                FrmDangNhap frmDangNhap = new FrmDangNhap();
+                frmDangNhap.ShowDialog();
+                parent?.Close();
+            }
+        }
     }
 }

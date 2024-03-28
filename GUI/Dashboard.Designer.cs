@@ -41,12 +41,13 @@
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.pnlDashBoard = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_TrangChuUser1 = new GUI.All_User_Control.uC_TrangChuUser();
             this.uC_Tho1 = new GUI.All_User_Control.UC_Tho();
             this.uC_HoatDong1 = new GUI.All_User_Control.UC_HoatDong();
             this.uC_BaiDang1 = new GUI.All_User_Control.UC_BaiDang();
             this.uC_TrangChu1 = new GUI.All_User_Control.UC_TrangChu();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.gunaPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.gunaPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel1.Controls.Add(this.btnDangXuat);
             this.gunaPanel1.Controls.Add(this.guna2PictureBox1);
             this.gunaPanel1.Controls.Add(this.btnTho);
             this.gunaPanel1.Controls.Add(this.btnBaiDang);
@@ -245,10 +247,6 @@
             this.pnlDashBoard.Size = new System.Drawing.Size(1052, 555);
             this.pnlDashBoard.TabIndex = 3;
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
-            // 
             // uC_TrangChuUser1
             // 
             this.uC_TrangChuUser1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -286,6 +284,26 @@
             this.uC_TrangChu1.Name = "uC_TrangChu1";
             this.uC_TrangChu1.Size = new System.Drawing.Size(1052, 555);
             this.uC_TrangChu1.TabIndex = 0;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BorderRadius = 10;
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(11, 570);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(197, 40);
+            this.btnDangXuat.TabIndex = 10;
+            this.btnDangXuat.Text = "Đăng Xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // Dashboard
             // 
@@ -328,5 +346,6 @@
         private All_User_Control.UC_HoatDong uC_HoatDong1;
         private All_User_Control.UC_Tho uC_Tho1;
         private All_User_Control.uC_TrangChuUser uC_TrangChuUser1;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }

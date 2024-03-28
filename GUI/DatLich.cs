@@ -79,8 +79,8 @@ namespace GUI
                     command.Parameters.AddWithValue("@MoTaChiTiet", txtMoTaChiTiet.Text);
                     command.Parameters.AddWithValue("@GhiChu", txtGhiChu.Text);
                     command.Parameters.AddWithValue("@IDBaiDang", IDBaiDang); // Thay thế idBaiDang bằng ID của bài đăng tương ứng
-                    command.Parameters.AddWithValue("@TrangThaiCongViecTho", "Chờ xác nhận"); // Mặc định trạng thái cho thợ là "Chờ xác nhận"
-                    command.Parameters.AddWithValue("@TrangThaiCongViecNguoiDung", "Đã hủy"); // Mặc định trạng thái cho người dùng là "Chờ xác nhận"
+                    command.Parameters.AddWithValue("@TrangThaiCongViecTho", "Chưa xử lý"); // Mặc định trạng thái cho thợ là "Chờ xác nhận"
+                    command.Parameters.AddWithValue("@TrangThaiCongViecNguoiDung", "Đang chờ thợ xác nhận"); // Mặc định trạng thái cho người dùng là "Chờ xác nhận"
 
                     // Thực thi truy vấn
                     int rowsAffected = command.ExecuteNonQuery();

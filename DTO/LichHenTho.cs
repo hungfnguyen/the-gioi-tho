@@ -9,7 +9,7 @@ namespace DTO
     public class LichHenTho
     {
         //thuoc tinh cua lich hen cua tho
-        public int ID { get; set; }
+        public int IDLichHen { get; set; }
         public string LinhVuc { get; set; }
         public string Ten { get; set; }
         public string SDT { get; set; }
@@ -19,6 +19,7 @@ namespace DTO
         public string MoTaChiTiet { get; set; }
         public string GhiChu { get; set; }
         public decimal GiaTien { get; set; }
-        public string TrangThaiCongVietTho { get; set; }
+        public string TrangThaiCongViecTho { get; set; }
+        public string TrangThaiCongViecNguoiDung { get; set; }
     }
    }

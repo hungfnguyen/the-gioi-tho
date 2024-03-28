@@ -39,7 +39,7 @@ namespace GUI.All_Tho_Control
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT T.IDCongViec, T.Ten, T.SDT, T.DiaChi, T.LichThoDen, T.Gio, T.MoTaChiTiet, T.GhiChu, T.TrangThaiCongViecTho, Q.GiaTien, Q.LinhVuc " +
+                    string query = "SELECT T.IDCongViec, T.Ten, T.SDT, T.DiaChi, T.LichThoDen, T.Gio, T.MoTaChiTiet, T.GhiChu, T.TrangThaiCongViecTho, T.TrangThaiCongViecNguoiDung, Q.GiaTien, Q.LinhVuc " +
                                    "FROM CongViec T INNER JOIN BaiDang Q ON T.IDBaiDang = Q.IDBaiDang";
 
                     SqlCommand command = new SqlCommand(query, connection);
@@ -48,14 +48,15 @@ namespace GUI.All_Tho_Control
                     while (reader.Read())
                     {
                         LichHenTho lichhen = new LichHenTho();
-                        lichhen.ID = Convert.ToInt32(reader["IDCongViec"]);
+                        lichhen.IDLichHen = Convert.ToInt32(reader["IDCongViec"]);
                         lichhen.Ten = reader["Ten"].ToString();
                         lichhen.DiaChi = reader["DiaChi"].ToString();
                         lichhen.SDT = reader["SDT"].ToString();
                         lichhen.LichHenDen = (DateTime)reader["LichThoDen"];
                         lichhen.MoTaChiTiet = reader["MoTaChiTiet"].ToString();
                         lichhen.GhiChu = reader["GhiChu"].ToString();
-                        lichhen.TrangThaiCongVietTho = reader["TrangThaiCongViecTho"].ToString();
+                        lichhen.TrangThaiCongViecTho = reader["TrangThaiCongViecTho"].ToString();
+                        lichhen.TrangThaiCongViecNguoiDung = reader["TrangThaiCongViecNguoiDung"].ToString();
                         lichhen.GiaTien = Convert.ToDecimal(reader["GiaTien"]);
                         lichhen.Gio = reader["Gio"].ToString();
                         lichhen.LinhVuc = reader["LinhVuc"].ToString();
@@ -80,6 +81,51 @@ namespace GUI.All_Tho_Control
             foreach (LichHenTho lichHen in danhSach)
             {
                 UC_Lich ucLich = new UC_Lich(lichHen);
+
+
+                if (lichHen.TrangThaiCongViecTho == "Đã hoàn thành")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                    ucLich.GetBtnChapNhan().Visible = false;
+                }
+
+                if (lichHen.TrangThaiCongViecTho == "Đã hủy")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                    ucLich.GetBtnChapNhan().Visible = false;
+                }
+
+                if (lichHen.TrangThaiCongViecTho == "Đã chấp nhận")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                    ucLich.GetBtnChapNhan().Visible = false;
+                    ucLich.GetBtnHoanThanh().Visible = true;
+                }
+
+                if (lichHen.TrangThaiCongViecTho == "Từ chối")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                    ucLich.GetBtnChapNhan().Visible = false;
+                }
+
+                if (lichHen.TrangThaiCongViecTho == "Đã hoàn thành")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                    ucLich.GetBtnChapNhan().Visible = false;
+                    
+                }
+
+                /*if (lichHen.TrangThaiCongViecNguoiDung == "Đã xác nhận")
+                {
+                    //ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                }*/
+
                 ucLich.Dock = DockStyle.Top;
                 pnlxemhen.Controls.Add(ucLich);
             }
@@ -111,14 +157,14 @@ namespace GUI.All_Tho_Control
                     while (reader.Read())
                     {
                         LichHenTho lichhen = new LichHenTho();
-                        lichhen.ID = Convert.ToInt32(reader["IDCongViec"]);
+                        lichhen.IDLichHen = Convert.ToInt32(reader["IDCongViec"]);
                         lichhen.Ten = reader["Ten"].ToString();
                         lichhen.DiaChi = reader["DiaChi"].ToString();
                         lichhen.SDT = reader["SDT"].ToString();
                         lichhen.LichHenDen = (DateTime)reader["LichThoDen"];
                         lichhen.MoTaChiTiet = reader["MoTaChiTiet"].ToString();
                         lichhen.GhiChu = reader["GhiChu"].ToString();
-                        lichhen.TrangThaiCongVietTho = reader["TrangThaiCongViecTho"].ToString();
+                        lichhen.TrangThaiCongViecTho = reader["TrangThaiCongViecTho"].ToString();
                         lichhen.GiaTien = Convert.ToDecimal(reader["GiaTien"]);
                         lichhen.Gio = reader["Gio"].ToString();
                         lichhen.LinhVuc = reader["LinhVuc"].ToString();
@@ -151,7 +197,7 @@ namespace GUI.All_Tho_Control
         private void bttuchoi_Click(object sender, EventArgs e)
         {
             pnlxemhen.Controls.Clear();
-            UpdateDanhSachLichHen("Từ Chối");
+            UpdateDanhSachLichHen("Từ chối");
         }
 
         private void btnHoanthanh_Click(object sender, EventArgs e)

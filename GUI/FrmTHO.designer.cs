@@ -42,10 +42,10 @@
             this.btnDangBai = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_TaiKhoan1 = new GUI.All_Tho_Control.UC_TaiKhoan();
-            this.uC_DangBai1 = new GUI.All_Tho_Control.UC_DangBai();
-            this.uC_LichHen1 = new GUI.All_Tho_Control.UC_LichHen();
             this.uC_ThongKe1 = new GUI.All_Tho_Control.UC_ThongKe();
+            this.uC_LichHen1 = new GUI.All_Tho_Control.UC_LichHen();
+            this.uC_DangBai1 = new GUI.All_Tho_Control.UC_DangBai();
+            this.uC_TaiKhoan1 = new GUI.All_Tho_Control.UC_TaiKhoan();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -245,6 +245,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.uC_ThongKe1);
             this.panel1.Controls.Add(this.uC_LichHen1);
             this.panel1.Controls.Add(this.uC_DangBai1);
@@ -254,13 +255,19 @@
             this.panel1.Size = new System.Drawing.Size(1109, 574);
             this.panel1.TabIndex = 6;
             // 
-            // uC_TaiKhoan1
+            // uC_ThongKe1
             // 
-            this.uC_TaiKhoan1.BackColor = System.Drawing.Color.White;
-            this.uC_TaiKhoan1.Location = new System.Drawing.Point(6, 3);
-            this.uC_TaiKhoan1.Name = "uC_TaiKhoan1";
-            this.uC_TaiKhoan1.Size = new System.Drawing.Size(1103, 568);
-            this.uC_TaiKhoan1.TabIndex = 6;
+            this.uC_ThongKe1.Location = new System.Drawing.Point(6, 3);
+            this.uC_ThongKe1.Name = "uC_ThongKe1";
+            this.uC_ThongKe1.Size = new System.Drawing.Size(1103, 568);
+            this.uC_ThongKe1.TabIndex = 10;
+            // 
+            // uC_LichHen1
+            // 
+            this.uC_LichHen1.Location = new System.Drawing.Point(6, 3);
+            this.uC_LichHen1.Name = "uC_LichHen1";
+            this.uC_LichHen1.Size = new System.Drawing.Size(1103, 568);
+            this.uC_LichHen1.TabIndex = 8;
             // 
             // uC_DangBai1
             // 
@@ -270,19 +277,13 @@
             this.uC_DangBai1.Size = new System.Drawing.Size(1103, 568);
             this.uC_DangBai1.TabIndex = 7;
             // 
-            // uC_LichHen1
+            // uC_TaiKhoan1
             // 
-            this.uC_LichHen1.Location = new System.Drawing.Point(6, 3);
-            this.uC_LichHen1.Name = "uC_LichHen1";
-            this.uC_LichHen1.Size = new System.Drawing.Size(1103, 568);
-            this.uC_LichHen1.TabIndex = 8;
-            // 
-            // uC_ThongKe1
-            // 
-            this.uC_ThongKe1.Location = new System.Drawing.Point(6, 3);
-            this.uC_ThongKe1.Name = "uC_ThongKe1";
-            this.uC_ThongKe1.Size = new System.Drawing.Size(1103, 568);
-            this.uC_ThongKe1.TabIndex = 10;
+            this.uC_TaiKhoan1.BackColor = System.Drawing.Color.White;
+            this.uC_TaiKhoan1.Location = new System.Drawing.Point(6, 3);
+            this.uC_TaiKhoan1.Name = "uC_TaiKhoan1";
+            this.uC_TaiKhoan1.Size = new System.Drawing.Size(1103, 568);
+            this.uC_TaiKhoan1.TabIndex = 6;
             // 
             // FrmTHO
             // 
@@ -298,6 +299,7 @@
             this.Name = "FrmTHO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTHO";
+            this.Load += new System.EventHandler(this.FrmTHO_Load);
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();

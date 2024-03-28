@@ -8,7 +8,7 @@ namespace DTO
 {
     public class LichHen
     {
-        public int ID { get; set; }
+        public int IDLichHen { get; set; }
         public string LinhVuc { get; set; }
         public string Ten { get; set; }
         public string SDT { get; set; }

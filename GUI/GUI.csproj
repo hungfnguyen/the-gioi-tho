@@ -324,6 +324,12 @@
     <Compile Include="DatLich.Designer.cs">
       <DependentUpon>DatLich.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThayDoiNgayGio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThayDoiNgayGio.Designer.cs">
+      <DependentUpon>FormThayDoiNgayGio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChonLinhVuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -472,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatLich.resx">
       <DependentUpon>DatLich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThayDoiNgayGio.resx">
+      <DependentUpon>FormThayDoiNgayGio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChonLinhVuc.resx">
       <DependentUpon>FrmChonLinhVuc.cs</DependentUpon>

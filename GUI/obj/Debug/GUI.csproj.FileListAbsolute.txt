@@ -227,3 +227,6 @@ D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\GUI\bin\Debug\DAL.pdb
 D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\GUI\bin\Debug\DTO.pdb
 D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\GUI\bin\Debug\Bunifu.UI.WinForms.xml
 D:\HocTapUTE\DoAnWinMoi\the-gioi-tho\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\GUI\obj\Debug\GUI.All_Tho_Control.UC_Lich.resources
+C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\GUI\obj\Debug\GUI.All_Tho_Control.UC_LichHen.resources
+C:\Users\HUNG\Documents\MonHoc\the-gioi-tho-master\GUI\obj\Debug\GUI.FormThayDoiNgayGio.resources

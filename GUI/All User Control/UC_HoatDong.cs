@@ -48,6 +48,7 @@ namespace GUI.All_User_Control
                 UC_Lich ucLich = new UC_Lich(lichHen); // Khởi tạo UC_Lich với dữ liệu tương ứng
                 ucLich.Dock = DockStyle.Top; // Đặt DockStyle của UC_Lich thành Top để chúng được thêm vào pnlLichHen từ trên xuống
                 pnlXemLichHen.Controls.Add(ucLich); // Thêm UC_Lich vào pnlLichHen
+
             }
         }
 
@@ -65,8 +66,8 @@ namespace GUI.All_User_Control
                     connection.Open();
 
                     // Câu truy vấn SQL để lấy thông tin từ các bảng liên quan
-                    string query = @"SELECT bd.LinhVuc, cv.LichThoDen, cv.Gio, cv.MoTaChiTiet, cv.GhiChu, bd.GiaTien,
-                                     tk.HoTen AS TenTho, tk.SoDienThoai AS SDTTho
+                    string query = @"SELECT cv.IDCongViec, bd.LinhVuc, cv.LichThoDen, cv.Gio, cv.MoTaChiTiet, cv.GhiChu, bd.GiaTien,
+                                     tk.HoTen AS TenTho, tk.SoDienThoai AS SDTTho, cv.TrangThaiCongViecTho, cv.TrangThaiCongViecNguoiDung
                                      FROM CongViec cv
                                      INNER JOIN BaiDang bd ON cv.IDBaiDang = bd.IDBaiDang
                                      INNER JOIN TaiKhoanTho tk ON bd.IDTho = tk.IDTho";
@@ -80,6 +81,7 @@ namespace GUI.All_User_Control
                             // Đọc dữ liệu từ kết quả truy vấn và chuyển đổi sang đối tượng LichHen
                             LichHen lichHen = new LichHen
                             {
+                                IDLichHen = reader.GetInt32(reader.GetOrdinal("IDCongViec")),
                                 LinhVuc = reader["LinhVuc"].ToString(),
                                 Ten = reader["TenTho"].ToString(),
                                 SDT = reader["SDTTho"].ToString(),
@@ -87,7 +89,9 @@ namespace GUI.All_User_Control
                                 Gio = reader["Gio"].ToString(),
                                 MoTaChiTiet = reader["MoTaChiTiet"].ToString(),
                                 GhiChu = reader["GhiChu"].ToString(),
-                                GiaTien = Convert.ToDecimal(reader["GiaTien"])   
+                                GiaTien = Convert.ToDecimal(reader["GiaTien"]),
+                                TrangThaiCongViecTho = reader["TrangThaiCongViecTho"].ToString(),
+                                TrangThaiCongViecNguoiDung = reader["TrangThaiCongViecNguoiDung"].ToString()
                             };
 
                             danhSachLichHen.Add(lichHen);
@@ -118,8 +122,8 @@ namespace GUI.All_User_Control
                     connection.Open();
 
                     // Câu truy vấn SQL để lấy thông tin từ các bảng liên quan
-                    string query = @"SELECT bd.LinhVuc, cv.LichThoDen, cv.Gio, cv.MoTaChiTiet, cv.GhiChu, bd.GiaTien,
-                             tk.HoTen AS TenTho, tk.SoDienThoai AS SDTTho
+                    string query = @"SELECT cv.IDCongViec, bd.LinhVuc, cv.LichThoDen, cv.Gio, cv.MoTaChiTiet, cv.GhiChu, bd.GiaTien,
+                             tk.HoTen AS TenTho, tk.SoDienThoai AS SDTTho, cv.TrangThaiCongViecTho, cv.TrangThaiCongViecNguoiDung
                              FROM CongViec cv
                              INNER JOIN BaiDang bd ON cv.IDBaiDang = bd.IDBaiDang
                              INNER JOIN TaiKhoanTho tk ON bd.IDTho = tk.IDTho
@@ -136,6 +140,7 @@ namespace GUI.All_User_Control
                             // Đọc dữ liệu từ kết quả truy vấn và chuyển đổi sang đối tượng LichHen
                             LichHen lichHen = new LichHen
                             {
+                                IDLichHen = reader.GetInt32(reader.GetOrdinal("IDCongViec")),
                                 LinhVuc = reader["LinhVuc"].ToString(),
                                 Ten = reader["TenTho"].ToString(),
                                 SDT = reader["SDTTho"].ToString(),
@@ -143,7 +148,9 @@ namespace GUI.All_User_Control
                                 Gio = reader["Gio"].ToString(),
                                 MoTaChiTiet = reader["MoTaChiTiet"].ToString(),
                                 GhiChu = reader["GhiChu"].ToString(),
-                                GiaTien = Convert.ToDecimal(reader["GiaTien"])
+                                GiaTien = Convert.ToDecimal(reader["GiaTien"]),
+                                TrangThaiCongViecTho = reader["TrangThaiCongViecTho"].ToString(),
+                                TrangThaiCongViecNguoiDung = reader["TrangThaiCongViecNguoiDung"].ToString()
                             };
 
                             danhSachLichHen.Add(lichHen);
@@ -170,9 +177,34 @@ namespace GUI.All_User_Control
             // Duyệt qua danh sách lịch hẹn và hiển thị lên giao diện
             foreach (LichHen lichHen in danhSachLichHen)
             {
+
+
                 UC_Lich ucLich = new UC_Lich(lichHen); // Khởi tạo UC_Lich với dữ liệu tương ứng
+
+                // ẩn các nút theo các mục
+                if (lichHen.TrangThaiCongViecNguoiDung == "Đã hủy")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                }
+
+                if (lichHen.TrangThaiCongViecNguoiDung == "Hoàn tất")
+                {
+                    ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                }
+
+                if (lichHen.TrangThaiCongViecNguoiDung == "Đã xác nhận")
+                {
+                    //ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                }
+
                 ucLich.Dock = DockStyle.Top; // Đặt DockStyle của UC_Lich thành Top để chúng được thêm vào pnlLichHen từ trên xuống
                 pnlXemLichHen.Controls.Add(ucLich); // Thêm UC_Lich vào pnlLichHen
+
+                // Kiểm tra trạng thái của lịch hẹn và ẩn/hiển thị các nút tương ứng
+                
             }
         }
 

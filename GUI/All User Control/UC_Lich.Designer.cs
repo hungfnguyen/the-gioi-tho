@@ -41,6 +41,7 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtGio = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtLichThoDen = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnChapNhan = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // txtGiaTien
@@ -213,6 +214,7 @@
             this.btnYeuCauDoiLich.Size = new System.Drawing.Size(173, 39);
             this.btnYeuCauDoiLich.TabIndex = 19;
             this.btnYeuCauDoiLich.Text = "Yêu Cầu Đổi Lịch";
+            this.btnYeuCauDoiLich.Click += new System.EventHandler(this.btnYeuCauDoiLich_Click);
             // 
             // btnHuyLichHen
             // 
@@ -234,6 +236,7 @@
             this.btnHuyLichHen.Size = new System.Drawing.Size(173, 35);
             this.btnHuyLichHen.TabIndex = 18;
             this.btnHuyLichHen.Text = "Hủy Lịch Hẹn";
+            this.btnHuyLichHen.Click += new System.EventHandler(this.btnHuyLichHen_Click);
             // 
             // guna2Button1
             // 
@@ -303,12 +306,30 @@
             this.txtLichThoDen.TabIndex = 29;
             this.txtLichThoDen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnChapNhan
+            // 
+            this.btnChapNhan.BorderRadius = 10;
+            this.btnChapNhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChapNhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChapNhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChapNhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChapNhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnChapNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChapNhan.ForeColor = System.Drawing.Color.White;
+            this.btnChapNhan.Location = new System.Drawing.Point(843, 92);
+            this.btnChapNhan.Name = "btnChapNhan";
+            this.btnChapNhan.Size = new System.Drawing.Size(180, 44);
+            this.btnChapNhan.TabIndex = 30;
+            this.btnChapNhan.Text = "Chấp Nhận";
+            this.btnChapNhan.Click += new System.EventHandler(this.btnChapNhan_Click);
+            // 
             // UC_Lich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.btnChapNhan);
             this.Controls.Add(this.txtLichThoDen);
             this.Controls.Add(this.txtGio);
             this.Controls.Add(this.txtGiaTien);
@@ -343,5 +364,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox txtGio;
         private Guna.UI2.WinForms.Guna2TextBox txtLichThoDen;
+        private Guna.UI2.WinForms.Guna2Button btnChapNhan;
     }
 }
