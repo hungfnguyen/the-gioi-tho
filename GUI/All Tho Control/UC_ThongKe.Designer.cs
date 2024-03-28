@@ -53,6 +53,7 @@
             this.pnCot.Name = "pnCot";
             this.pnCot.Size = new System.Drawing.Size(562, 562);
             this.pnCot.TabIndex = 8;
+            this.pnCot.Paint += new System.Windows.Forms.PaintEventHandler(this.pnCot_Paint);
             // 
             // pnTron
             // 
@@ -248,7 +249,6 @@
             this.Controls.Add(this.pnTron);
             this.Name = "UC_ThongKe";
             this.Size = new System.Drawing.Size(1103, 568);
-           // this.Load += new System.EventHandler(this.UC_ThongKe_Load);
             this.pnTron.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

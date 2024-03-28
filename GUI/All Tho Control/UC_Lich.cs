@@ -96,6 +96,7 @@ namespace GUI.All_Tho_Control
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
             UpdateDatabase(_lichHenTho.IDLichHen, "Đã xác nhận", "Đã chấp nhận");
+            this.Dispose();
             // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
             MessageBox.Show("Đã nhận công việc!");
         }
@@ -103,6 +104,7 @@ namespace GUI.All_Tho_Control
         private void btnTuChoi_Click(object sender, EventArgs e)
         {
             UpdateDatabase(_lichHenTho.IDLichHen, "Đã hủy", "Đã hủy");
+            this.Dispose();
             // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
             MessageBox.Show("Đã hủy lịch hẹn!");
         }
@@ -121,7 +123,7 @@ namespace GUI.All_Tho_Control
 
                 UpdateDatabase(_lichHenTho.IDLichHen, "Yêu cầu dời lịch", "Chưa xử lý");
 
-
+                this.Dispose();
 
                 // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
                 MessageBox.Show("Đã yêu cầu dời lịch hẹn!");
@@ -131,6 +133,7 @@ namespace GUI.All_Tho_Control
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
             UpdateDatabase(_lichHenTho.IDLichHen, "Hoàn tất", "Đã hoàn thành");
+            this.Dispose();
             // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
             MessageBox.Show("Cập nhật thành công!");
         }

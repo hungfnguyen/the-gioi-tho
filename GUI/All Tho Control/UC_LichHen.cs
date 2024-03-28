@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DTO.BaiDang;
 using static DTO.LichHenTho;
+using BLL;
 
 namespace GUI.All_Tho_Control
 {
@@ -27,7 +28,9 @@ namespace GUI.All_Tho_Control
         private void LoadData()
         {
             // Load danh sách lịch hẹn khi UserControl được khởi tạo
-            HienThiDanhSachLichHen(GetDanhSachLichHenTho());
+            //HienThiDanhSachLichHen(GetDanhSachLichHenTho());
+            pnlxemhen.Controls.Clear();
+            UpdateDanhSachLichHen("Chưa xử lý");
         }
 
         private List<LichHenTho> GetDanhSachLichHenTho()
@@ -133,11 +136,11 @@ namespace GUI.All_Tho_Control
 
         private void UpdateDanhSachLichHen(string trangThai)
         {
-            List<LichHenTho> danhSachLichHen = GetDanhSachLichHenThoTheoTrangThai(trangThai);
+            List<LichHenTho> danhSachLichHen = GetDanhSachLichHenThoTheoTrangThai(trangThai, BLL.LoginBLL.IDTho);
             HienThiDanhSachLichHen(danhSachLichHen);
         }
 
-        private List<LichHenTho> GetDanhSachLichHenThoTheoTrangThai(string trangThai)
+        private List<LichHenTho> GetDanhSachLichHenThoTheoTrangThai(string trangThai, int idTho)
         {
             List<LichHenTho> danhSachLichHen = new List<LichHenTho>();
 
@@ -148,10 +151,11 @@ namespace GUI.All_Tho_Control
                     connection.Open();
                     string query = "SELECT T.IDCongViec, T.Ten, T.SDT, T.DiaChi, T.LichThoDen, T.Gio, T.MoTaChiTiet, T.GhiChu, T.TrangThaiCongViecTho, Q.GiaTien, Q.LinhVuc " +
                                    "FROM CongViec T INNER JOIN BaiDang Q ON T.IDBaiDang = Q.IDBaiDang " +
-                                   "WHERE T.TrangThaiCongViecTho = @TrangThai";
+                                   "WHERE T.TrangThaiCongViecTho = @TrangThai AND Q.IDTho = @idTho";
 
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@TrangThai", trangThai);
+                    command.Parameters.AddWithValue("@idTho", BLL.LoginBLL.IDTho);
                     SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())

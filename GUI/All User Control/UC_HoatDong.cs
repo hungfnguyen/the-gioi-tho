@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace GUI.All_User_Control
 {
@@ -34,9 +35,14 @@ namespace GUI.All_User_Control
         {
 
             // Thêm dữ liệu mẫu
-            AddSampleDataToDataGridView();
-        }
+            //AddSampleDataToDataGridView();
+            // Lấy danh sách các lịch hẹn đang chờ thợ xác nhận từ cơ sở dữ liệu
+            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đang chờ thợ xác nhận", BLL.LoginBLL.IDNguoiDung);
 
+            // Hiển thị danh sách lịch hẹn trên giao diện
+            HienThiDanhSachLichHen(danhSachLichHen);
+        }
+/*
         private void AddSampleDataToDataGridView()
         {
             // Lấy danh sách mẫu của các lịch hẹn từ cơ sở dữ liệu
@@ -50,7 +56,7 @@ namespace GUI.All_User_Control
                 pnlXemLichHen.Controls.Add(ucLich); // Thêm UC_Lich vào pnlLichHen
 
             }
-        }
+        }*/
 
         private string connectionString = "Data Source=LAPTOP-DTKDJMOS\\SQLEXPRESS;Initial Catalog=TheGioiTho;Integrated Security=True";
 
@@ -70,7 +76,8 @@ namespace GUI.All_User_Control
                                      tk.HoTen AS TenTho, tk.SoDienThoai AS SDTTho, cv.TrangThaiCongViecTho, cv.TrangThaiCongViecNguoiDung
                                      FROM CongViec cv
                                      INNER JOIN BaiDang bd ON cv.IDBaiDang = bd.IDBaiDang
-                                     INNER JOIN TaiKhoanTho tk ON bd.IDTho = tk.IDTho";
+                                     INNER JOIN TaiKhoanTho tk ON bd.IDTho = tk.IDTho
+                                     ";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -110,7 +117,7 @@ namespace GUI.All_User_Control
             return danhSachLichHen;
         }
 
-        private List<LichHen> GetDanhSachLichHenTheoTrangThai(string trangThai)
+        private List<LichHen> GetDanhSachLichHenTheoTrangThai(string trangThai, int idNguoiDung)
         {
             List<LichHen> danhSachLichHen = new List<LichHen>();
 
@@ -127,11 +134,12 @@ namespace GUI.All_User_Control
                              FROM CongViec cv
                              INNER JOIN BaiDang bd ON cv.IDBaiDang = bd.IDBaiDang
                              INNER JOIN TaiKhoanTho tk ON bd.IDTho = tk.IDTho
-                             WHERE cv.TrangThaiCongViecNguoiDung = @TrangThai";
+                             WHERE cv.TrangThaiCongViecNguoiDung = @TrangThai AND cv.IDNguoiDat = @idNguoiDung";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@TrangThai", trangThai);
+                        command.Parameters.AddWithValue("@idNguoiDung", idNguoiDung);
 
                         SqlDataReader reader = command.ExecuteReader();
 
@@ -200,6 +208,14 @@ namespace GUI.All_User_Control
                     ucLich.GetBtnYeuCauDoiLich().Visible = false;
                 }
 
+                if (lichHen.TrangThaiCongViecNguoiDung == "Yêu cầu dời lịch")
+                {
+                    //ucLich.GetBtnHuyLichHen().Visible = false;
+                    ucLich.GetBtnYeuCauDoiLich().Visible = false;
+                    ucLich.GetBtnChapNhan().Visible = true;
+
+                }
+
                 ucLich.Dock = DockStyle.Top; // Đặt DockStyle của UC_Lich thành Top để chúng được thêm vào pnlLichHen từ trên xuống
                 pnlXemLichHen.Controls.Add(ucLich); // Thêm UC_Lich vào pnlLichHen
 
@@ -231,7 +247,7 @@ namespace GUI.All_User_Control
         private void btnDangChoThoXacNhan_Click(object sender, EventArgs e)
         {
             // Lấy danh sách các lịch hẹn đang chờ thợ xác nhận từ cơ sở dữ liệu
-            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đang chờ thợ xác nhận");
+            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đang chờ thợ xác nhận", BLL.LoginBLL.IDNguoiDung);
 
             // Hiển thị danh sách lịch hẹn trên giao diện
             HienThiDanhSachLichHen(danhSachLichHen);
@@ -240,7 +256,7 @@ namespace GUI.All_User_Control
         private void btnYeuCauDoiLich_Click(object sender, EventArgs e)
         {
             // Lấy danh sách các lịch hẹn yêu cầu dời lịch từ cơ sở dữ liệu
-            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Yêu cầu dời lịch");
+            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Yêu cầu dời lịch", BLL.LoginBLL.IDNguoiDung);
 
             // Hiển thị danh sách lịch hẹn trên giao diện
             HienThiDanhSachLichHen(danhSachLichHen);
@@ -249,7 +265,7 @@ namespace GUI.All_User_Control
         private void btnDaXacNhan_Click(object sender, EventArgs e)
         {
             // Lấy danh sách các lịch hẹn yêu cầu dời lịch từ cơ sở dữ liệu
-            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đã xác nhận");
+            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đã xác nhận", BLL.LoginBLL.IDNguoiDung);
 
             // Hiển thị danh sách lịch hẹn trên giao diện
             HienThiDanhSachLichHen(danhSachLichHen);
@@ -258,7 +274,7 @@ namespace GUI.All_User_Control
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
             // Lấy danh sách các lịch hẹn yêu cầu dời lịch từ cơ sở dữ liệu
-            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Hoàn tất");
+            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Hoàn tất", BLL.LoginBLL.IDNguoiDung);
 
             // Hiển thị danh sách lịch hẹn trên giao diện
             HienThiDanhSachLichHen(danhSachLichHen);
@@ -267,7 +283,10 @@ namespace GUI.All_User_Control
         private void btnDaHuy_Click(object sender, EventArgs e)
         {
             // Lấy danh sách các lịch hẹn yêu cầu dời lịch từ cơ sở dữ liệu
-            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đã hủy");
+            List<LichHen> danhSachLichHen = GetDanhSachLichHenTheoTrangThai("Đã hủy", BLL.LoginBLL.IDNguoiDung);
+
+            // Sắp xếp danh sách các lịch hẹn theo thời gian (tăng dần)
+            //danhSachLichHen = danhSachLichHen.OrderBy(lichHen => lichHen.LichHenDen).ToList();
 
             // Hiển thị danh sách lịch hẹn trên giao diện
             HienThiDanhSachLichHen(danhSachLichHen);

@@ -35,9 +35,10 @@ namespace GUI.All_Tho_Control
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT COUNT(*) FROM CongViec WHERE TrangThaiCongViecTho = @TrangThai";
+                    string query = "SELECT COUNT(*) FROM CongViec INNER JOIN BaiDang ON CongViec.IDBaiDang = BaiDang.IDBaiDang WHERE TrangThaiCongViecTho = @TrangThai AND BaiDang.IDTho = @idTho";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@TrangThai", trangThai);
+                    command.Parameters.AddWithValue("@idTho", BLL.LoginBLL.IDTho);
                     count = (int)command.ExecuteScalar();
                 }
             }
@@ -146,6 +147,11 @@ namespace GUI.All_Tho_Control
             // Thêm biểu đồ tròn vào form hoặc panel
             this.Controls.Add(chartPie); // Thêm vào form
             pnTron.Controls.Add(chartPie); // Thêm vào panel
+        }
+
+        private void pnCot_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -21,6 +21,8 @@ namespace GUI.All_User_Control
         public Guna2Button GetBtnHuyLichHen() { return btnHuyLichHen; }
         public Guna2Button GetBtnYeuCauDoiLich() { return btnYeuCauDoiLich; }
 
+        public Guna2Button GetBtnChapNhan() { return btnChapNhan; }
+
         public UC_Lich()
         {
             InitializeComponent();
@@ -117,6 +119,7 @@ namespace GUI.All_User_Control
 
             UpdateDatabase(_lichHen.IDLichHen, "Đã hủy", "Đã hủy");
             // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
+            this.Dispose();
             MessageBox.Show("Đã hủy lịch hẹn!");
         }
 
@@ -135,7 +138,7 @@ namespace GUI.All_User_Control
                 UpdateDatabase(_lichHen.IDLichHen, "Đang chờ thợ xác nhận", "Chưa xử lý");
 
 
-
+                this.Dispose();
                 // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
                 MessageBox.Show("Đã yêu cầu dời lịch hẹn!");
             }
@@ -146,6 +149,7 @@ namespace GUI.All_User_Control
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
             UpdateDatabase(_lichHen.IDLichHen, "Đã xác nhận", "Đã chấp nhận");
+            this.Dispose();
             // Hiển thị thông báo hoặc thực hiện các hành động khác tùy thuộc vào logic của ứng dụng
             MessageBox.Show("Đã chấp nhận công việc!");
         }

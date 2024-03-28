@@ -321,6 +321,7 @@
             this.btnChapNhan.Size = new System.Drawing.Size(180, 44);
             this.btnChapNhan.TabIndex = 30;
             this.btnChapNhan.Text = "Chấp Nhận";
+            this.btnChapNhan.Visible = false;
             this.btnChapNhan.Click += new System.EventHandler(this.btnChapNhan_Click);
             // 
             // UC_Lich
